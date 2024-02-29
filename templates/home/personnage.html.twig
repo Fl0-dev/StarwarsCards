@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ personnage.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container flex flex-col items-center gap-4">
+		<h2 class="text-2xl text-gray-100 font-semibold">{{ personnage.name }}</h2>
+		<img class="w-24 h-24 mb-3 rounded-full shadow-lg" src={{personnage.photo}} alt={{"random pour " ~ personnage.name}}/>
+		<p class="text-gray-400">Année de naissance :
+			{{ personnage.birth_year }}</p>
+		<p class="text-gray-400">Taille :
+			{{ personnage.height }}</p>
+		<p class="text-gray-400">Poids :
+			{{ personnage.mass }}</p>
+		<p class="text-gray-400">Couleur des cheveux :
+			{{ personnage.hair_color }}</p>
+		<p class="text-gray-400">Couleur des yeux :
+			{{ personnage.eye_color }}</p>
+		<p class="text-gray-400">Couleur de peau :
+			{{ personnage.skin_color }}</p>
+		<button class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" onclick="window.location.href='{{ path('app_home') }}'">Retour à la liste</button>
+	</div>
+{% endblock %}
